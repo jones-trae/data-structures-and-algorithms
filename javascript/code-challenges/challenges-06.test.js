@@ -22,12 +22,8 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
-  let rNames = arr.map(person => {
-    return person.name.split('').reverse().join('');
-  });
-  return rNames;// Solution code here...
-};
+const getNames = (arr) => arr.map(person => person.name.split('').reverse().join('')); // Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -37,7 +33,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  
+  let newStr = str + ' The end.';
+  return newStr;
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +53,7 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  arr.push(arr[0]); // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +72,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +89,7 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  people.map(person => person.author = true); 
 };
 
 /* ------------------------------------------------------------------------------------------------
