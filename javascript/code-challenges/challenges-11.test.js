@@ -28,7 +28,7 @@ function transformToLis(obj){
     newArr.push(item1, item2);
   }
   return newArr;
-};
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
