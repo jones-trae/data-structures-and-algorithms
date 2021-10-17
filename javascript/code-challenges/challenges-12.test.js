@@ -6,13 +6,16 @@ CHALLENGE 1 - Review
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
+
+
+const replaceZeros = (string) => string.replace(/0/g,'zero');
+
+
+
 const replaceZeros = (string) => {
-  const replaceZeros = (string) => {
-    let regex = /0/g;
-  
-    return string.replace(regex, 'zero');
-  }; // Solution code here...
+  // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -35,6 +38,15 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
   
   };
 
+
+const validatePin = (pin) => /^\d{4}$/.test(pin);
+
+const validatePin = (pin) => {
+  // Solution code here...
+};
+
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -44,7 +56,12 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+
+  let regex = /^([a-zA-Z]){5,10}$/g;
+  let test = regex.test(word);
+  return test;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +73,12 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+
+  let regex = /([a-zA-Z]){1,}([0-9]){1,}/g;
+  let test = regex.test(string);
+  return test;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,9 +97,14 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
+
+const validateEmail = (email) => {return /^\w+\.*\w+@\w*\.(net|com|org)$/g.test(email);};
+
+
 const validateEmail = (email) => {
   // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -100,9 +127,13 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
+
+const validatePhoneNumber = (phoneNumber) => {return /^(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/.test(phoneNumber);};
+
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
