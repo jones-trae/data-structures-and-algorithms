@@ -6,12 +6,7 @@ CHALLENGE 1 - Review
 Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
 ------------------------------------------------------------------------------------------------ */
 
-const longestString = (arr) => {
-  var alpha;
-  arr.reduce((sol, ind) => sol.length > ind.length ? alpha = sol : alpha = ind,'');
-  return arr.indOF(alpha);
-};
-  
+const longestString = (arr) => arr.indexOf(arr.reduce((a,b) => a.length > b.length ? a : b,''));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -32,9 +27,7 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  // Solution code here...
-};
+const findHappiness = (arr) => arr.filter(value => value.includes(':)') ? arr : console.log('meh'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -44,9 +37,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+const standardizePhoneNumbers = (arr) => arr.map((element) => element.replace(/[^\d]/g,''));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -57,7 +48,9 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  const newArr = [];
+  str.split('').reduce((prev,curr,i) => i % 2 === 1 ? newArr.push(curr) : console.log('bail fool'),[]);
+  return newArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +60,11 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  var find = true;
+  arr.forEach(value => {
+    !value.includes(':)') ? find = false : console.log('false');
+  });
+  return find;
 };
 
 /* ------------------------------------------------------------------------------------------------
