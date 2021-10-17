@@ -11,8 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  let name = (/([MD]\w+\.\s\w+)/g);
+  return arr.filter(x => name.test(x));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,7 +24,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => arr.map(word => word[0].toUpperCase() + word.substring(1));
-  // Solution code here...
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,9 +98,7 @@ let starWarsData = [{
   gender: 'n/a'
 }];
 
-let biggerThanLuke = (arr) => {
-  // Solution code here...
-};
+let biggerThanLuke = (arr) => arr.filter(chr=> chr.mass > 77).map(name => name.name).join(' - ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -119,14 +118,14 @@ const sortBy = (property, arr) => {
 
   return arr.sort((a, b) => {
     return a[property] > b[property] ? 1: -1;
-  
+
   });
 
 
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -138,7 +137,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  return /^(https:\/\/)/.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,7 +160,7 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  // Solution code here...No Way this is going down
 };
 
 /* ------------------------------------------------------------------------------------------------
