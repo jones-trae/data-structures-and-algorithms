@@ -54,10 +54,7 @@ let characters = [
   }
 ];
 
-const sortByChildren = (charArray) => {
-  const sortByChildren = charArray => charArray.sort((f, m) => f.children.length - m.children.length);
-  // Solution code here...
-};
+const sortByChildren = charArray => charArray.sort((x, y) => x.children.length - y.children.length);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -68,7 +65,7 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   let regex = /w/g;
-  return regex.test(str); // Solution code here...
+  return regex.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,7 +82,7 @@ For example:
 
 const isNum = (input) => {
   let regex = /\d/g;
-  return regex.test(input);// Solution code here...
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,7 +94,7 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   let regex = /world/g;
-  return regex.test(input);// Solution code here...
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +106,14 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regex = /[A-Z]\w*/g;
+  let retArray;
+  if (str.match(regex)) {
+    retArray = str.match(regex);
+  } else {
+    retArray = [];
+  }
+  return retArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,7 +123,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regex = /^[A-J]\w+/g;
+  return arr.filter(city => city.match(regex));
 };
 
 /* ------------------------------------------------------------------------------------------------
