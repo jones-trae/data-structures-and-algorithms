@@ -19,8 +19,6 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
-
   let newArr = [];
   if(obj.name){
     let item1 = `<li>name: ${obj.name}</li>`;
@@ -28,7 +26,7 @@ function transformToLis(obj){
     newArr.push(item1, item2);
   }
   return newArr;
-};
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -48,7 +46,7 @@ const count = (target, input) => {
       }
     }
   }
-  return aoa; // Solution code here...
+  return aoa;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +66,7 @@ const totalSum = (input) => {
       total += num;
     }
   }
-  return total;// Solution code here...
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +82,19 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-//  oooof no idea // Solution code here...
+  let filtArray = input.map(array => array.filter(number => number % 5 === 0));
+  let dFilter = filtArray.map(array => array.filter(number => typeof(number) === 'number'));
+
+  let newArr = [];
+  for (let i = 0; i < dFilter.length; i++){
+    newArr.push([]);
+    for (let j = 0; j <= dFilter.length; j++){
+      if (dFilter[i][j]) {
+        newArr[i].push(Math.pow(2, dFilter[i][j]));
+      }
+    }
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,7 +160,16 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let str = '';
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].gender === 'male' || data[i].gender === 'female') {
+      str += `${data[i].name}`;
+      if (!(i === data.length - 1)) {
+        str += ' and ';
+      }
+    }
+  }
+  return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -160,7 +179,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  let flag = data[0];
+  for (let character of data){
+    if (parseInt(character.height) < parseInt(flag.height)) {
+      flag = character;
+    }
+  }
+  return flag.name;
 };
 
 /* ------------------------------------------------------------------------------------------------
