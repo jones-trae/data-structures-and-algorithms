@@ -12,9 +12,7 @@ const replaceZeros = (string) => string.replace(/0/g,'zero');
 
 
 
-const replaceZeros = (string) => {
-  // Solution code here...
-};
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,24 +24,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 
-  const validatePin = (pin) => {
-    const regex = /\d{4}/;
-  
-    if ($ {pin}.length === 4); {
-    return regex.test(pin);
-    } 
-    else {
-    return false;
-    }
-  
-  };
-
-
 const validatePin = (pin) => /^\d{4}$/.test(pin);
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+
 
 
 
@@ -101,9 +84,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 const validateEmail = (email) => {return /^\w+\.*\w+@\w*\.(net|com|org)$/g.test(email);};
 
 
-const validateEmail = (email) => {
-  // Solution code here...
-};
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,9 +111,7 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {return /^(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/.test(phoneNumber);};
 
-const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+
 
 
 /* ------------------------------------------------------------------------------------------------
